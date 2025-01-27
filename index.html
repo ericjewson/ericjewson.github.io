@@ -1,22 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
     <body>
+    body
         <header>
-            Eric's Home
+            <h1>Eric's Web Dev </h1>
         </header>
         <nav>
-        </nav>
+            <a href="url">webdev.owls.plus</a>
         <main>
             <article>
-                <br>
-                Eric's Home
-                <section>
-                </section>
-                <section>
-                </section>
+                <h2>Eric's Home</h2>
+                <unorderedlist>
+                    <ul>
+                        <li>pizza</li>
+                        <li>wings</li>
+                        <li>chips</li>
+                    </ul>
+                </unorderedlist>
+                <orderedList>
+                    <ol>
+                        <li>cheese</li>
+                        <li>plain</li>
+                        <li>pepperoni</li>
+                    </ol>
+                </orderedList>
+                <image>
+                <img src="C:\Users\jewso\OneDrive\Pictures\Pittsburgh\DSC_1349.JPG" alt="pretty flower" width="500" height="500">
+                </image>
+                <table>
+                    <tr>
+                        <th>toppings</th>
+                        <th>crust</th>
+                        <th>cheese</th>
+                    </tr>
+                    <tr>
+                        <td>pepperoni</td>
+                        <td>stuffed</td>
+                        <td>mozzarella</td>
+                    </tr>
+                    <tr>
+                        <td>plain</td>
+                        <td>garlic</td>
+                        <td>four</td>
+                    </tr>
+                </table>
             </article>
             <aside>
+
             </aside>
+                <h1>What Pizza Do You Like?</h1>
+    <form action="#" method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <label for="pizza-type">What type of pizza do you prefer?</label><br>
+        <input type="radio" id="cheese" name="pizza-type" value="Cheese" required>
+        <label for="cheese">Cheese</label><br>
+
+        <input type="radio" id="pepperoni" name="pizza-type" value="Pepperoni">
+        <label for="pepperoni">Pepperoni</label><br>
+
+        <input type="radio" id="veggie" name="pizza-type" value="Veggie">
+        <label for="veggie">Veggie</label><br>
+
+        <input type="radio" id="hawaiian" name="pizza-type" value="Hawaiian">
+        <label for="hawaiian">Hawaiian</label><br><br>
+
+        <label for="toppings">Additional Toppings (optional):</label><br>
+        <select id="toppings" name="toppings" multiple>
+            <option value="Olives">Olives</option>
+            <option value="Mushrooms">Mushrooms</option>
+            <option value="Bacon">Bacon</option>
+            <option value="Onions">Onions</option>
+            <option value="Extra Cheese">Extra Cheese</option>
+        </select>
+        <br><br>
+
+        <label for="comments">Any comments or special requests?</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
         </main>
         <footer>
         </footer>
