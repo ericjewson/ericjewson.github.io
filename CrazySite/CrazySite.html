@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crazy Site</title>
+    <link rel="stylesheet" href="CrazySite.css">
+</head>
+<body>
+<h1>Eric's Crazy Site</h1>
+
+<input type="text" id="key-input" placeholder="Type here...">
+<p>Keys Typed: <span id="key-output"></span></p>
+
+
+
+
+</body>
+<script>
+  const keyInput = document.getElementById('key-input');
+  const keyOutput = document.getElementById('key-output');
+
+  let output = '';
+
+  keyInput.addEventListener('keydown', function(e) { // using keydown instead of keyup because keyup does not track special characters
+    if (e.key === 'Backspace') {
+      output = output.slice(0, -1); // Remove last character if they press backspace
+    } else if (e.key.length === 1) {
+      output += e.key; // Append regular characters, not things like tab or other special keys, only letters and numbers
+    }
+    keyOutput.innerHTML = output;
+  });
+</script>
+</html>

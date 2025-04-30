@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixed Bag</title>
+</head>
+<body>
+    <h1>Mixed Bag</h1>
+
+    <h2>Encapsulation</h2>
+    <button onclick="myCar.accelerate(10)">Accelerate</button>
+    <p><strong>Encapsulation:</strong> The Car class keeps the speed variable private, exposing only the accelerate method to modify it.</p>
+
+    <script>
+        class Car {
+            constructor(brand, model) {
+                this.brand = brand;
+                this.model = model;
+                let speed = 0;
+
+                this.accelerate = function(amount) {
+                    speed += amount;
+                    document.getElementById("carStatus").innerText = `${this.brand} ${this.model} is now going at ${speed} km/h`;
+                };
+            }
+        }
+
+        let myCar = new Car("Toyota", "Corolla");
+    </script>
+    <p id="carStatus">Speed: 0 km/h</p>
+
+    <h2>Inheritance</h2>
+    <button onclick="showElectricCar()">Show Electric Car</button>
+    <p id="electricCarStatus"></p>
+    <p><strong>Inheritance:</strong> The ElectricCar class extends Car, inheriting its properties and behaviors while adding a batteryLife property.</p>
+
+    <script>
+        class ElectricCar extends Car {
+            constructor(brand, model, batteryLife) {
+                super(brand, model);
+                this.batteryLife = batteryLife;
+            }
+        }
+
+        let myElectricCar = new ElectricCar("Tesla", "Model S", "500km");
+
+        function showElectricCar() {
+            document.getElementById("electricCarStatus").innerText = `Brand: ${myElectricCar.brand}, Model: ${myElectricCar.model}, Battery Life: ${myElectricCar.batteryLife}`;
+        }
+    </script>
+
+    <h2>Polymorphism</h2>
+    <button onclick="myDog.speak()">Make Dog Speak</button>
+    <p id="dogSpeak"></p>
+    <p><strong>Polymorphism:</strong> The speak method is overridden in the Dog class to provide different behavior than the base Animal class.</p>
+
+    <script>
+        class Animal {
+            speak() {
+                document.getElementById("dogSpeak").innerText = "This animal makes a sound.";
+            }
+        }
+
+        class Dog extends Animal {
+            speak() {
+                document.getElementById("dogSpeak").innerText = "The dog barks.";
+            }
+        }
+
+        let myDog = new Dog();
+    </script>
+
+    <h2>Abstraction</h2>
+    <button onclick="calculateArea()">Calculate Square Area</button>
+    <p id="squareArea"></p>
+    <p><strong>Abstraction:</strong> The Shape class is abstract, meaning it cannot be instantiated. It forces subclasses like Square to implement the area method.</p>
+
+    <script>
+        class Shape {
+            constructor(name) {
+                if (this.constructor === Shape) {
+                    throw new Error("Abstract classes cannot be instantiated.");
+                }
+                this.name = name;
+            }
+            area() {
+                throw new Error("Method 'area()' must be implemented.");
+            }
+        }
+
+        class Square extends Shape {
+            constructor(side) {
+                super("Square");
+                this.side = side;
+            }
+            area() {
+                return this.side * this.side;
+            }
+        }
+
+        let mySquare = new Square(4);
+
+        function calculateArea() {
+            document.getElementById("squareArea").innerText = `Square Area: ${mySquare.area()} sq units`;
+        }
+    </script>
+</body>
+</html>

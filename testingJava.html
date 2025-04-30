@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing Java</title>
+</head>
+<body>
+<h1>Objects</h1>
+    <p>Objects are programmable things in javascript.<br>
+    The syntax for changing a property of an object is object.property<br>
+        Working with object methods syntax object.method()<br>
+        Example:<br>
+        history.back()<br><br>
+        runs<br><br>
+        const goBack = confirm("Do you want to go back?");<br>
+        if (goBack === true){<br>
+            history.back();<br>
+        }<br>
+
+        <br>* make sure to put your script at the bottom of the page of it will be ran while creating the page making big errors<br>
+        There are ways to get parent, child, and sibling nodes of objects<br>
+    </p>
+<h1>Events</h1>
+<p>An event is an action that occurs in response to some external stimulus, such as reloading, clicking, pressing a key, scrolling the page.<br>
+You need event listeners to listen for a specific event to happen and then it responds to that.<br>
+    for specific listeners go to page 549<br>
+</p>
+
+<h1>Arrays</h1>
+<p>
+    To declare an array the syntax is const arrayName = new Array(); <br>
+    To declare and populate the array it is const arrayName = new Array(value1, value2, value3, ...);<br>
+    You can run loops to populate the arrays aswell.<br>
+    Arrays are very similar to python dictionaries <br>
+</p>
+<h1>Testing</h1>
+
+<input type="text" id="key-input" placeholder="Type here...">
+<p>Keys Typed: <span id="key-output"></span></p>
+
+</body>
+
+<script>
+const keyInput = document.getElementById('key-input');
+const keyOutput = document.getElementById('key-output');
+keyInput.addEventListener('keypress', function(e) {
+    keyOutput.innerHTML += e.key; // Append each key pressed
+});
+
+
+</script>
+</html>

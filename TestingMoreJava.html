@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Examples</title>
+</head>
+<body>
+
+  <h1>JavaScript Manipulation Examples</h1>
+
+  <section>
+    <h2>1. Manipulating Strings</h2>
+    <p id="string-manipulation"></p>
+    <script>
+      let text = "Hello, World!";
+      document.getElementById("string-manipulation").innerHTML = `
+        String Length: ${text.length}<br>
+        First Character: ${text.charAt(0)}<br>
+        Substring (7, 12): ${text.substring(7, 12)}<br>
+        Replace 'World' with 'JavaScript': ${text.replace("World", "JavaScript")}<br>
+        Uppercase: ${text.toUpperCase()}
+      `;
+    </script>
+  </section>
+
+  <section>
+    <h2>2. Manipulating Numbers</h2>
+    <p id="number-manipulation"></p>
+    <script>
+      let number = 5;
+      document.getElementById("number-manipulation").innerHTML = `
+        Number + 10: ${number + 10}<br>
+        Random number: ${Math.random()}<br>
+        Math.floor(4.7): ${Math.floor(4.7)}<br>
+        Math.ceil(4.1): ${Math.ceil(4.1)}<br>
+        Math.round(4.5): ${Math.round(4.5)}
+      `;
+    </script>
+  </section>
+
+  <section>
+    <h2>3. Manipulating Dates</h2>
+    <p id="date-manipulation"></p>
+    <script>
+      let currentDate = new Date();
+      document.getElementById("date-manipulation").innerHTML = `
+        Current Date: ${currentDate}<br>
+        Day of the Month: ${currentDate.getDate()}<br>
+        Month: ${currentDate.getMonth()}<br>
+        Year: ${currentDate.getFullYear()}<br>
+      `;
+      currentDate.setDate(15);
+      document.getElementById("date-manipulation").innerHTML += `
+        Updated Date: ${currentDate}
+      `;
+    </script>
+  </section>
+
+  <section>
+    <h2>4. Storing User Data in the Browser</h2>
+    <p id="storage-manipulation"></p>
+    <script>
+      // Storing data in localStorage
+      localStorage.setItem("username", "Eric");
+
+      // Retrieving data from localStorage
+      let username = localStorage.getItem("username");
+      // Storing data in sessionStorage
+      sessionStorage.setItem("sessionID", "abc123");
+
+      // Retrieving data from sessionStorage
+      let sessionID = sessionStorage.getItem("sessionID");
+
+      document.getElementById("storage-manipulation").innerHTML = `
+        Stored Username from localStorage: ${username}<br>
+        Stored Session ID from sessionStorage: ${sessionID}
+      `;
+    </script>
+  </section>
+
+  <section>
+    <h2>5. Debugging Your Code</h2>
+    <p id="debugging-output"></p>
+    <script>
+      let x = 5;
+      let y = 10;
+      document.getElementById("debugging-output").innerHTML = `
+        Sum of x and y: ${x + y}<br>
+      `;
+
+      // Using debugger
+      function sum(a, b) {
+        debugger; // Execution will pause here in developer tools
+        return a + b;
+      }
+      document.getElementById("debugging-output").innerHTML += `
+        Sum of 2 and 3: ${sum(2, 3)}
+      `;
+    </script>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+body{
+    background-color: purple;
+}
+
+h1{
+    font-size: 100px;
+    max-width: max-content;
+    margin: auto;
+}
+
+list{
+    color:purple;
+}

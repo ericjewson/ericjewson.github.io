@@ -1,5 +1,7 @@
 table {
         border-collapse: collapse;
+        margin: 10px;
+        padding: 10px;
 }
 th, td {
         border: 1px solid black;
@@ -7,4 +9,35 @@ th, td {
 }
 caption {
 caption-side: bottom;
+}
+
+box{
+background-color: green;
+width: 200px;
+height: 200px;
+border: 2px solid black;
+padding: 20px;
+margin: 20px;
+}
+
+footer{
+height: 200px;
+}
+
+form{
+padding: 40px;
+}
+
+tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+h2 + p::first-letter{
+    color: red;
+    font-size: 32px;
+}
+
+a{
+    color: green;
+    text-decoration: none;
 }
