@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Theme Switcher</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    select {
+      margin: 10px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Eric's Theme Switcher</h1>
+
+  <label>Background Color:
+    <select id="bgColor">
+      <option value="white">White</option>
+      <option value="lightgray">Light Gray</option>
+      <option value="black">Black</option>
+      <option value="beige">Beige</option>
+      <option value="blue">Blue</option>
+      <option value="red">Red</option>
+      <option value="purple">Purple</option>
+    </select>
+  </label>
+
+  <label>Font Color:
+    <select id="fontColor">
+      <option value="black">Black</option>
+      <option value="white">White</option>
+      <option value="darkblue">Dark Blue</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="red">Red</option>
+      <option value="orange">Orange</option>
+
+    </select>
+  </label>
+
+  <label>Font Family:
+    <select id="fontFamily">
+      <option value="Arial, sans-serif">Arial</option>
+      <option value="Georgia, serif">Georgia</option>
+      <option value="Courier New, monospace">Courier New</option>
+      <option value="Verdana, sans-serif">Verdana</option>
+    </select>
+  </label>
+
+  <label>Button Shape:
+    <select id="buttonShape">
+      <option value="4px">Rounded</option>
+      <option value="20px">Pill</option>
+      <option value="0px">Square</option>
+    </select>
+  </label>
+
+  <br>
+
+  <button class="btn" id="sampleButton">Sample Button</button>
+
+  <script>
+    const bgColor = document.getElementById('bgColor');
+    const fontColor = document.getElementById('fontColor');
+    const fontFamily = document.getElementById('fontFamily');
+    const buttonShape = document.getElementById('buttonShape');
+    const sampleButton = document.getElementById('sampleButton');
+
+    function updateTheme() {
+      document.body.style.backgroundColor = bgColor.value;
+      document.body.style.color = fontColor.value;
+      document.body.style.fontFamily = fontFamily.value;
+      sampleButton.style.borderRadius = buttonShape.value;
+      sampleButton.style.backgroundColor = fontColor.value;
+      sampleButton.style.color = bgColor.value;
+    }
+
+    bgColor.addEventListener('change', updateTheme);
+    fontColor.addEventListener('change', updateTheme);
+    fontFamily.addEventListener('change', updateTheme);
+    buttonShape.addEventListener('change', updateTheme);
+  </script>
+</body>
+</html>
